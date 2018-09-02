@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Jason&#39;s Blog</title>
   
-  
+  <subtitle>Jason</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.jmzhang.com/"/>
   <updated>2018-09-02T13:34:53.691Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.jmzhang.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>JasonZhang</name>
     
   </author>
   
@@ -18,9 +18,9 @@
   
   <entry>
     <title>中文</title>
-    <link href="http://yoursite.com/2018/09/02/%E4%B8%AD%E6%96%87/"/>
-    <id>http://yoursite.com/2018/09/02/中文/</id>
-    <published>2018-09-02T13:34:53.000Z</published>
+    <link href="http://www.jmzhang.com/2018/09/03/%E4%B8%AD%E6%96%87/"/>
+    <id>http://www.jmzhang.com/2018/09/03/中文/</id>
+    <published>2018-09-02T21:34:53.000Z</published>
     <updated>2018-09-02T13:34:53.691Z</updated>
     
     <summary type="html">
@@ -32,9 +32,9 @@
   
   <entry>
     <title>Jason New</title>
-    <link href="http://yoursite.com/2018/09/02/Jason-New/"/>
-    <id>http://yoursite.com/2018/09/02/Jason-New/</id>
-    <published>2018-09-02T13:15:40.000Z</published>
+    <link href="http://www.jmzhang.com/2018/09/03/Jason-New/"/>
+    <id>http://www.jmzhang.com/2018/09/03/Jason-New/</id>
+    <published>2018-09-02T21:15:40.000Z</published>
     <updated>2018-09-02T13:15:40.987Z</updated>
     
     <summary type="html">
@@ -46,8 +46,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/09/02/hello-world/"/>
-    <id>http://yoursite.com/2018/09/02/hello-world/</id>
+    <link href="http://www.jmzhang.com/2018/09/02/hello-world/"/>
+    <id>http://www.jmzhang.com/2018/09/02/hello-world/</id>
     <published>2018-09-02T12:03:22.593Z</published>
     <updated>2018-09-02T12:03:22.593Z</updated>
     
