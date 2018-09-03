@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jmzhang.com/"/>
-  <updated>2018-09-02T13:34:53.691Z</updated>
+  <updated>2018-09-03T04:45:58.787Z</updated>
   <id>http://www.jmzhang.com/</id>
   
   <author>
@@ -17,30 +17,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>中文</title>
-    <link href="http://www.jmzhang.com/2018/09/03/%E4%B8%AD%E6%96%87/"/>
-    <id>http://www.jmzhang.com/2018/09/03/中文/</id>
+    <title>hexo+github搭建个人博客</title>
+    <link href="http://www.jmzhang.com/2018/09/03/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://www.jmzhang.com/2018/09/03/hexo+github搭建个人博客/</id>
     <published>2018-09-02T21:34:53.000Z</published>
-    <updated>2018-09-02T13:34:53.691Z</updated>
+    <updated>2018-09-03T04:45:58.787Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。"><a href="#博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。" class="headerlink" title="博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。"></a>博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。</h1><a id="more"></a><h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><ul><li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js官方下载地址</a></p></li><li><p>从上面的链接下载node.js，并安装。 </p></li><li><p>下载LTS那个即可</p></li></ul><h2 id="申请Github账号"><a href="#申请Github账号" class="headerlink" title="申请Github账号"></a>申请Github账号</h2><ul><li><p><a href="https://github.com/join?source=header-home" target="_blank" rel="noopener">Github注册页面</a></p></li><li><p>输入<strong>用户名，Email，密码</strong>，注册账号。比如我的用户名是：JasonZhangCauc</p></li></ul><h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><ul><li>注意，仓库名应该为：用户名.github.io。比如，我的仓库名是：<a href="https://github.com/xuezhisd/xuezhisd.github.io" target="_blank" rel="noopener">JasonZhangCauc.github.io</a>。</li></ul><h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><ul><li><p><a href="https://git-scm.com/downloads/" target="_blank" rel="noopener">git下载地址</a></p></li><li><p>下载git安装文件，双击执行安装。</p></li></ul><h3 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h3><ul><li><p>打开git bash终端。</p></li><li><p>设置user.name和user.email。</p></li></ul><p>git config –global user.name “你的GitHub用户名”</p><p>git config –global user.email “你的GitHub注册邮箱”</p><ul><li>生成ssh密匙</li></ul><p>ssh-keygen -t rsa -C “你的GitHub注册邮箱”</p><ul><li>此时，在用户文件夹下就会有一个新的文件夹.ssh，里面有刚刚创建的ssh密钥文件id_rsa和id_rsa.pub。</li></ul><h3 id="将公匙添加到github上"><a href="#将公匙添加到github上" class="headerlink" title="将公匙添加到github上"></a>将公匙添加到github上</h3><ul><li><p>详细教程自行baidu。</p></li><li><p>用户头像→Settings→SSH and GPG keys→New SSH<br>key→将id_rsa.pub中的内容复制到Key文本框中，然后点击Add SSH<br>key(添加SSH)按钮。</p></li></ul><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ul><li>执行以下命令安装hexo。</li></ul><p># 安装hexo</p><p>npm install hexo-cli g# 初始化博客文件夹</p><p>hexo init blog# 切换到该路径cd blog# 安装hexo的扩展插件</p><p>npm install# 安装其它插件</p><p>npm install hexo-server –save</p><p>npm install hexo-admin –save</p><p>npm install hexo-generator-archive –save</p><p>npm install hexo-generator-feed –save</p><p>npm install hexo-generator-search –save</p><p>npm install hexo-generator-tag –save</p><p>npm install hexo-deployer-git –save</p><p>npm install hexo-generator-sitemap –save</p><h2 id="初探hexo"><a href="#初探hexo" class="headerlink" title="初探hexo"></a>初探hexo</h2><ul><li>第一次使用hexo，在本地创建服务器使用。</li></ul><p># 生成静态页面</p><p>hexo generate# 开启本地服务器</p><p>hexo s</p><ul><li><p>打开浏览器，地址栏中输入：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>,应该可以看见刚刚创建的博客了。</p></li><li><p>问题：为什么访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，无反应？ </p><ul><li>解决方法：可能是由于端口问题引起的。使用Ctrl+C中断本地服务，使用命令hexo<br>s -p<br>5000重新开启本地服务，访问<a href="http://localhost:5000/" target="_blank" rel="noopener">http://localhost:5000/</a>可以看到博客页面了。</li></ul></li></ul><h2 id="将hexo博客部署到github上"><a href="#将hexo博客部署到github上" class="headerlink" title="将hexo博客部署到github上"></a>将hexo博客部署到github上</h2><ul><li>修改配置文件<strong>blog/_config.yml</strong>，修改deploy项的内容，如下所示：</li></ul><p># Deployment 注释## Docs: <a href="https://hexo.io/docs/deployment.htmldeploy" target="_blank" rel="noopener">https://hexo.io/docs/deployment.htmldeploy</a>:</p><p># 类型</p><p>type: git</p><p># 仓库</p><p>repo: git\@github.com:JasonZhangCauc/JasonZhangCauc.github.io.git</p><p># 分支</p><p>branch: master</p><ul><li><p>注意：<strong>type: git</strong>中的冒号后面由空格。</p></li><li><p>注意：将git\@github.com:<strong>JasonZhangCauc/JasonZhangCauc</strong>.github.io.git中的用户名换成自己的用户名git\@github.com:<strong>github_username/github_username</strong>.github.io.git。</p></li></ul><h3 id="部署hexo"><a href="#部署hexo" class="headerlink" title="部署hexo"></a>部署hexo</h3><ul><li>输入下面的命令将hexo博客部署到github中：</li></ul><p># 清空静态页面</p><p>hexo clean# 生成静态页面</p><p>hexo generate# 部署</p><p>hexo deploy</p><ul><li>打开网页，输入<a href="http://github_username.github.io/" target="_blank" rel="noopener">http://github_username.github.io</a>，打开github上托管的博客。如我的博客地址是：<a href="http://xuezhisd.github.io/" target="_blank" rel="noopener">http://JasonZhangCauc.github.io</a>。</li></ul><h1 id="hexo命令缩写"><a href="#hexo命令缩写" class="headerlink" title="hexo命令缩写"></a>hexo命令缩写</h1><ul><li>hexo支持命令缩写，如下所示。hexo g等价于hexo generate</li></ul><p>hexo g：hexo generate</p><p>hexo c：hexo clean</p><p>hexo s：hexo server</p><p>hexo d：hexo deploy</p><h1 id="hexo组合命令"><a href="#hexo组合命令" class="headerlink" title="hexo组合命令"></a>hexo组合命令</h1><p># 清除、生成、启动</p><p>hexo clean &amp;&amp; hexo g -s# 清除、生成、部署</p><p>hexo clean &amp;&amp; hexo g -d</p><h1 id="附博客维护方法："><a href="#附博客维护方法：" class="headerlink" title="附博客维护方法："></a>附博客维护方法：</h1><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></p>]]></content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。&quot;&gt;&lt;a href=&quot;#博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。&quot; class=&quot;headerlink&quot; title=&quot;博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。&quot;&gt;&lt;/a&gt;博主我用过很多云服务器、云主机搭建个人博客网站，但没用过github的page页，想尝试下，搞了一会就搭建完成了，总的来说很顺利，在这里分享给大家。&lt;/h1&gt;
     
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>Jason New</title>
-    <link href="http://www.jmzhang.com/2018/09/03/Jason-New/"/>
-    <id>http://www.jmzhang.com/2018/09/03/Jason-New/</id>
-    <published>2018-09-02T21:15:40.000Z</published>
-    <updated>2018-09-02T13:15:40.987Z</updated>
+      <category term="hexo" scheme="http://www.jmzhang.com/tags/hexo/"/>
     
-    <summary type="html">
-    
-    </summary>
-    
+      <category term="github" scheme="http://www.jmzhang.com/tags/github/"/>
     
   </entry>
   
@@ -49,16 +43,13 @@
     <link href="http://www.jmzhang.com/2018/09/02/hello-world/"/>
     <id>http://www.jmzhang.com/2018/09/02/hello-world/</id>
     <published>2018-09-02T12:03:22.593Z</published>
-    <updated>2018-09-02T12:03:22.593Z</updated>
+    <updated>2018-09-03T04:50:52.870Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Hello world!<br>Hello Friend!<br><a id="more"></a><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;p&gt;Hello world!&lt;br&gt;Hello Friend!&lt;br&gt;
     
     </summary>
     
