@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jmzhang.com/2018/09/02/hello-world/</loc>
+    
+    <lastmod>2018-09-13T15:08:56.605Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.jmzhang.com/2018/09/06/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%AB%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95Java%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2018-09-12T15:05:31.300Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://www.jmzhang.com/2018/09/03/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2018-09-10T15:01:23.243Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.jmzhang.com/2018/09/02/hello-world/</loc>
-    
-    <lastmod>2018-09-06T23:27:03.349Z</lastmod>
     
   </url>
   
