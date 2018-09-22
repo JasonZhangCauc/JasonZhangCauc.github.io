@@ -2,21 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.jmzhang.com/2018/09/22/hello-world%20-%20%E5%89%AF%E6%9C%AC%20(2)/</loc>
-    
-    <lastmod>2018-09-16T15:01:21.857Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.jmzhang.com/2018/09/22/hello-world%20-%20%E5%89%AF%E6%9C%AC/</loc>
-    
-    <lastmod>2018-09-16T15:01:21.857Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.jmzhang.com/2018/09/02/hello-world/</loc>
     
     <lastmod>2018-09-16T15:01:21.857Z</lastmod>
     
@@ -45,6 +31,20 @@
   
   <url>
     <loc>http://www.jmzhang.com/2018/09/22/hello-world%20-%20%E5%89%AF%E6%9C%AC%20(6)/</loc>
+    
+    <lastmod>2018-09-16T15:01:21.857Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.jmzhang.com/2018/09/22/hello-world%20-%20%E5%89%AF%E6%9C%AC%20(2)/</loc>
+    
+    <lastmod>2018-09-16T15:01:21.857Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.jmzhang.com/2018/09/02/hello-world/</loc>
     
     <lastmod>2018-09-16T15:01:21.857Z</lastmod>
     
