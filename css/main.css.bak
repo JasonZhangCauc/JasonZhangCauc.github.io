@@ -705,6 +705,7 @@ pre .javascript .function {
 .page-post-detail .post-type-quote blockquote div {
   text-align: center;
 }
+
 .post .post-body .group-picture img {
   box-sizing: border-box;
   padding: 0 3px;
@@ -1937,7 +1938,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0a41;
+  background: #7fffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3021,4 +3022,7 @@ hr {
 }
 .content {
   width: 900px;
+}
+.post {
+    background: #ffffffb8;
 }
