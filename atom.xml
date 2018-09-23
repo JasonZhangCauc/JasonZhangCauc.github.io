@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jmzhang.com/"/>
-  <updated>2018-09-16T15:01:21.857Z</updated>
+  <updated>2018-09-23T02:44:49.044Z</updated>
   <id>http://www.jmzhang.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test0923</title>
+    <link href="http://www.jmzhang.com/2018/09/23/test0923/"/>
+    <id>http://www.jmzhang.com/2018/09/23/test0923/</id>
+    <published>2018-09-23T10:28:18.000Z</published>
+    <updated>2018-09-23T02:44:49.044Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      This is my Page.
+    
+    </summary>
+    
+      <category term="categorie" scheme="http://www.jmzhang.com/categories/categorie/"/>
+    
+    
+      <category term="tags" scheme="http://www.jmzhang.com/tags/tags/"/>
+    
+      <category term="tags2" scheme="http://www.jmzhang.com/tags/tags2/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
