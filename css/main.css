@@ -2014,12 +2014,13 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff1ff;
+  background: #ff3bfb;
 }
 .links-of-blogroll {
   font-size: 13px;
 }
 .links-of-blogroll-title {
+  margin-top: 20px;
   font-size: 14px;
   font-weight: 600;
 }

@@ -112,7 +112,7 @@
     sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -308,6 +308,562 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.jmzhang.com/2018/10/09/git学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JasonZhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://github.jmzhang.top/img/myself.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/09/git学习笔记/" itemprop="url">git学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T13:10:43Z">
+                2018-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  git学习笔记.
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p><img src="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy1.png" alt="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy1.png"></p>
+<p><strong>前言</strong></p>
+<p>什么是Git?<br>Git是目前世界上最先进的分布式版本控制系统（没有之一），而且是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何项目。</p>
+<p><strong>Git安装</strong></p>
+<p>在<strong>Debian</strong>或者<strong>Ubuntu Linux</strong>下的Git安装非常简单，直接一条命令搞定</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">| sudo apt-<span class="builtin-name">get</span> install git</span><br></pre></td></tr></table></figure>
+<p><strong>Windows</strong>下的模拟环境安装起来比较复杂，那么可以用牛人封装好的模拟环境加Git，叫<strong>msysgit</strong>，只需要下载一个exe然后双击安装  可从<code>&lt;https://git-for-windows.github.io/&gt;</code>下载，或者从<a href="https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit" target="_blank" rel="noopener">廖雪峰老师的镜像</a>下载，然后按默认选项安装 .安装完成后，在开始菜单里找到“Git”-&gt;“GitBash”，跳出一个类似命令行窗口的东西，就说明Git安装成功</p>
+<p>成功安装之后，还需要配置一下全局个人信息：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+<p>每次提交，都会记录这两个值，<code>--global</code>参数，表示你这台机器上所有的Git仓库都会使用这个配置<br>可使用<code>git config -l</code> 查看全局配置信息</p>
+<p><strong>运行前配置</strong></p>
+<p>一般在新的系统上，我们都需要先配置下自己的 Git<br>工作环境。配置工作只需一次，以后升级时还会沿用现在的配置。</p>
+<p><strong>配置文件如何生效</strong></p>
+<p>对于 Git 来说，配置文件的权重是<strong>仓库>全局>系统</strong>。Git会使用这一系列的配置文件来存储你定义的偏好，它首先会查找<code>/etc/gitconfig</code>文件（系统级），该文件含有对系统上所有用户及他们所拥有的仓库都生效的配置值。接下来Git 会查找每个用户的<code>\~/.gitconfig</code>文件（全局级）。最后 Git会查找由用户定义的各个库中Git目录下的配置文件<code>.git/config（仓库级）</code>，该文件中的值只对当前所属仓库有效。以上阐述的三层配置从一般到特殊层层推进，如果定义的值有冲突，以后面层中定义的为准，例如：<code>.git/config</code>和<code>/etc/gitconfig</code>的较量中，<code>.git/config</code>取得了胜利。</p>
+<p><strong>查看配置</strong></p>
+<p>格式：<code>git config [--local\|--global\|--system] -l</code></p>
+<p>example:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前生效的配置</span></span><br><span class="line">git<span class="built_in"> config </span>-l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看仓库级的配置</span></span><br><span class="line">git<span class="built_in"> config </span>--local -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看全局级的配置</span></span><br><span class="line">git<span class="built_in"> config </span>--global -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统级的配置</span></span><br><span class="line">git<span class="built_in"> config </span>--system -l</span><br></pre></td></tr></table></figure>
+<p><strong>修改配置</strong></p>
+<p>格式：<code>git config [--local\|--global\|--system] key value</code></p>
+<p>example:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">| git<span class="built_in"> config </span>--global user.name ybd</span><br><span class="line">| git<span class="built_in"> config </span>--global user.email yangbingdong1994@gmail.com</span><br></pre></td></tr></table></figure>
+<p><strong>创建仓库（Repository）</strong></p>
+<p>创建一个目录并进入，进行初始化仓库<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">| mkdir repo </span></span><br><span class="line"><span class="string">| cd repo </span></span><br><span class="line"><span class="string">| git init</span></span><br></pre></td></tr></table></figure></p>
+<p>目录下会多一个<code>.git</code> 的隐藏文件，现在要创建一个文件并提交到仓库<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">| touch read</span><br><span class="line">| vi read</span><br><span class="line">|  # 按a进入编辑</span><br><span class="line">|  # 输入Git is a distributed version control system</span><br><span class="line">|  # 按下Esc，并输入 <span class="string">":wq"</span> 保存退出</span><br><span class="line">| git <span class="builtin-name">add</span> README.md  #添加文件到缓存区</span><br><span class="line">| git commit -m <span class="string">"first commit"</span>  #将缓存区的文件提交到本地仓库</span><br></pre></td></tr></table></figure></p>
+<p>多个文件提交可用<code>git add -A</code>然后再<code>commit</code><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| ➜ repo git:(master) ✗ git <span class="keyword">commit</span> -m <span class="string">"first commit"</span>      </span><br><span class="line">| [<span class="keyword">master</span> （根提交） <span class="number">201817</span>f5] <span class="keyword">first</span> <span class="keyword">commit</span>         </span><br><span class="line">| <span class="number">1</span> <span class="keyword">file</span> <span class="keyword">changed</span>, <span class="number">2</span> insertions(+)                          </span><br><span class="line">| <span class="keyword">create</span> <span class="keyword">mode</span> <span class="number">105624</span> <span class="keyword">read</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>操作的自由穿越</strong></p>
+<p>要随时掌握工作区的状态：<code>git status</code><br>查看修改内容：<code>git diff read</code><br>查看版本历史信息 <code>got log</code> 或<code>git log --pretty=oneline</code></p>
+<p><strong>版本穿越</strong></p>
+<p>退到上一个版本：</p>
+<table>
+<thead>
+<tr>
+<th>git reset –hard HEAD^</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>上上一个版本就是 <code>HEAD^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成 HEAD~100<br>要重返未来，查看命令历史：<code>git reflog</code></p>
+<p><strong>修改管理</strong></p>
+<p>添加文件到缓存区：<code>git add read</code>或 <code>git add -A</code><br>然后提交：<code>git commit -m &quot;msg&quot;</code><br>查看状态：<code>git status</code><br><strong>每次修改，如果不<code>add</code>到暂存区，那就不会加入到<code>commit</code>中</strong></p>
+<p><strong>撤销修改</strong></p>
+<p>当你发现工作区的修改有错误的时候，可丢弃工作区的修改：</p>
+<table>
+<thead>
+<tr>
+<th>git checkout – read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>命令 <code>git checkout --read</code>意思就是，把 read 文件在工作区的修改全部撤销，这里有两种情况：</p>
+<p>一种是<code>read</code> 自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态</p>
+<p>一种是 <code>read</code> 已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态</p>
+<p><strong>总之，就是让这个文件回到最近一次 <code>git commit</code> 或 <code>git add</code> 时的状态</strong><br><strong>注意！<code>git checkout -- file</code> 命令中的 <code>--</code>很重要，没有<code>--</code> 就变成了切换分支了</strong></p>
+<p>当你发现该文件修改错误并且已经提交到了缓存区，这个时候可以把暂存区的修改撤销掉（unstage），重新放回工作区：</p>
+<table>
+<thead>
+<tr>
+<th>git reset HEAD read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>然后再丢弃工作区中的修改：</p>
+<table>
+<thead>
+<tr>
+<th>git checkout – read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>git reset</code>命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本</p>
+<p><strong>删除文件</strong></p>
+<p>如果把工作区中的文件删除了，那么工作区和版本库就不一致，<code>git status</code>命令会立刻告诉你哪些文件被删除了<br>现在有两个选择</p>
+<ul>
+<li><p>一是确实要从版本库中删除该文件，那就用命令删掉，并且提交：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">| git rm read     </span></span><br><span class="line"><span class="string">| git commit -m "</span>delete<span class="string">"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：</p>
+<p>| git checkout – read |<br>|———————-|</p>
+</li>
+</ul>
+<p><code>git checkout</code>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”</p>
+<p><strong>远程仓库</strong></p>
+<p>那么学会了Git的基本操作之后，对于分布式管理我们还需要有一个远程仓库供大家一起共同开发，好在有一个全世界最大最神奇的同性交友网—— <a href="https://github.com/" target="_blank" rel="noopener">Github</a><br>那么在使用Github之前呢，我们需要设置一下与Github的SSH通讯：  </p>
+<ol>
+<li>创建SSH Key（已有.ssh目录的可以略过）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>ssh-keygen -t rsa -C “youremail\@example.com”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码<br>如果一切顺利的话，可以在用户主目录里找到<code>.ssh</code> 目录，里面有 <code>id_rsa</code> 和 <code>id_rsa.pub</code> 两个文件，这两个就是<code>SSH Key</code>的秘钥对，<code>id_rsa</code>是私钥，不能泄露出去，<code>id_rsa.pub</code>是公钥，可以放心地告诉任何人</p>
+<ol start="2">
+<li>登陆<code>GitHub</code>，打开<code>“Account settings”</code>，<code>“SSH Keys”</code>页面，然后，点<code>“Add SSH
+Key”</code>，填上任意Title，在Key文本框里粘贴<code>id_rsa.pub</code>文件的内容，最后点<code>“Add Key”</code></li>
+</ol>
+<p><strong>添加远程仓库</strong></p>
+<p>首先到Github创建一个仓库<br>然后与本地关联：</p>
+<table>
+<thead>
+<tr>
+<th>git remote add origin git\@github.com:your-name/repo-name.git</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>远程库的名字就是<code>origin</code>，这是Git默认的叫法，也可以改成别的，但是<code>origin</code>这个名字一看就知道是远程库</p>
+<p>下一步，就可以把本地库的所有内容推送到远程库上：</p>
+<table>
+<thead>
+<tr>
+<th>git push -u origin master</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>把本地库的内容推送到远程，用 <code>git push</code> 命令，实际上是把当前分支<code>master</code>推送到远程<br>由于远程库是空的，我们第一次推送<code>master</code>分支时，加上了 -u 参数，Git不但会把本地的<code>master</code>分支内容推送的远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令</p>
+<p>此后的推送都可以使用：</p>
+<table>
+<thead>
+<tr>
+<th>git push</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>从远程仓库克隆</strong></p>
+<table>
+<thead>
+<tr>
+<th>git git\@github.com:your-name/repo-name.git</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>标签管理</strong></p>
+<p><strong>查看tag</strong></p>
+<p>列出所有<code>tag</code>：</p>
+<table>
+<thead>
+<tr>
+<th>git tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>这样列出的tag是按字母排序的，和创建时间没关系。如果只是想查看某些<code>tag</code>的话，可以加限定：</p>
+<table>
+<thead>
+<tr>
+<th>git tag -l v1.*</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>这样就只会列出<code>1.X</code>的版本。</p>
+<p><strong>创建tag</strong></p>
+<p>创建轻量级<code>tag</code>：</p>
+<table>
+<thead>
+<tr>
+<th>git tag 1.0.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>这样创建的<code>tag</code>没有附带其他信息，与之相应的是带信息的<code>tag</code>,<code>-m</code>后面带的就是注释信息，这样在日后查看的时候会很有用，这种是普通<code>tag</code>，还有一种有签名的<code>tag</code>：</p>
+<table>
+<thead>
+<tr>
+<th>git tag -a 1.0.1 -m ‘first version’</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>除了可以为当前的进度添加<code>tag</code>，我们还可以为以前的<code>commit</code>添加<code>tag</code>：<br>首先查看以前的<code>commit</code></p>
+<table>
+<thead>
+<tr>
+<th>git log –oneline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>假如有这样一个<code>commit</code>：a5cbc2 updated readme<br>这样为他添加tag</p>
+<table>
+<thead>
+<tr>
+<th>git tag -a v1.1 a5cbc2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>删除tag</strong></p>
+<p>很简单，知道<code>tag</code>名称后：</p>
+<table>
+<thead>
+<tr>
+<th>git tag -d v1.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>删除远程分支：</p>
+<table>
+<thead>
+<tr>
+<th>git push origin –delete tag \&lt;tagname></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>共享tag</strong></p>
+<p>我们在执行git<br><code>push</code>的时候，tag是不会上传到服务器的，比如现在的github，创建<code>tag</code>后<code>git</code><br><code>push</code>，在github网页上是看不到<code>tag</code>的，为了共享这些<code>tag</code>，你必须这样：</p>
+<table>
+<thead>
+<tr>
+<th>git push origin –tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>分支管理</strong></p>
+<p>分支相当与平行宇宙，互不干扰，哪天合并了就拥有了所有平行宇宙的特性  </p>
+<p><img src="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy2.png" alt="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy2.png"></p>
+<p><strong>创建与合并分支</strong></p>
+<ul>
+<li><p>每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即<code>master</code>分支</p>
+</li>
+<li><p>一开始的时候，<code>master</code>分支是一条线，Git用 <code>master</code>指向最新的提交，再用<code>HEAD</code>指向<code>master</code> ，就能确定当前分支，以及当前分支的提交点</p>
+</li>
+<li><p>当我们创建新的分支，例如<code>dev</code> 时，Git新建了一个指针叫 <code>dev</code> ，指向 <code>master</code> 相同的提交，再把 <code>HEAD</code> 指向<code>dev</code> ，就表示当前分支在<code>dev</code> 上</p>
+</li>
+<li><p>Git创建一个分支很快，因为除了增加一个 <code>dev</code>指针，改改<code>HEAD</code>的指向，工作区的文件都没有任何变化</p>
+</li>
+<li><p>当 <code>HEAD</code>指向<code>dev</code> ，对工作区的修改和提交就是针对<code>dev</code>分支了，比如新提交一次后，<code>dev</code>指针往前移动一步，而 <code>master</code>指针不变  </p>
+</li>
+</ul>
+<pre><code>![http://mdpost.jmzhang.top/mdpost/20181009/gitstudy3.png](http://mdpost.jmzhang.top/mdpost/20181009/gitstudy3.png)
+</code></pre><p>查看分支：<code>git branch</code><br>创建分支：<code>git branch \&lt;name\&gt;</code><br>切换分支：<code>git checkout \&lt;name\&gt;</code><br>创建+切换分支：<code>git checkout -b \&lt;name\&gt;</code><br>合并某分支到当前分支：<code>git merge \&lt;name\&gt;</code><br>删除分支：<code>git branch -d \&lt;name\&gt;</code></p>
+<p><strong>解决冲突</strong></p>
+<p>合并分支并不是每次都不会出问题，如不同的分支对同一个文件同一行都被修改过，就会出现以下情况  </p>
+<p><img src="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy4.png" alt="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy4.png"></p>
+<p>那么再次合并有可能会冲突</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">➜  repo git:(master) git <span class="keyword">merge</span> feature1 </span><br><span class="line">自动合并 <span class="keyword">read</span></span><br><span class="line">冲突（内容）：合并冲突于 <span class="keyword">read</span></span><br><span class="line">自动合并失败，修正冲突然后提交修正的结果。</span><br><span class="line">➜  repo git:(<span class="keyword">master</span>) ✗ git <span class="keyword">status</span> </span><br><span class="line">位于分支 <span class="keyword">master</span></span><br><span class="line">您有尚未合并的路径。</span><br><span class="line">  （解决冲突并运行 <span class="string">"git commit"</span>）</span><br><span class="line"></span><br><span class="line">未合并的路径：</span><br><span class="line">  （使用 <span class="string">"git add &lt;文件&gt;..."</span> 标记解决方案）</span><br><span class="line"></span><br><span class="line">	双方修改：   <span class="keyword">read</span></span><br><span class="line"></span><br><span class="line">修改尚未加入提交（使用 <span class="string">"git add"</span> 和/或 <span class="string">"git commit -a"</span>）</span><br></pre></td></tr></table></figure>
+<p>这种情况必须手动解决然后再次<code>git add</code>.，<code>git commit -m &quot;commit&quot;</code>，打开文件可看到</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Git is a version control</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">Creating a new branch is quick &amp; simple.</span><br><span class="line">=======</span><br><span class="line">Creating a new branch is quick AND simple.</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature1</span><br></pre></td></tr></table></figure>
+<p>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容，那么经过合意，不好意思，大师兄说了，在座的各位都是垃圾，于是改成</p>
+<table>
+<thead>
+<tr>
+<th>Git,too fast too simple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>再提交<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> 1    </span>|<span class="string"> ➜ repo git:(master) ✗ git add read                                                                                                       </span>|</span><br><span class="line">|<span class="string"> 2    </span>|<span class="string"> ➜ repo git:(master) ✗ git commit -m "conflict fixed"                                                                                     </span>|</span><br><span class="line">|<span class="string"> 3    </span>|<span class="string"> [master 8933f88] conflict fixed                                                                                                          </span>|</span><br><span class="line">|<span class="string"> 4    </span>|<span class="string"> ➜ repo git:(master)                                                                                                                      </span>|</span><br></pre></td></tr></table></figure></p>
+<p>ok了，再次<code>add</code>和 <code>commit</code> ，现在<code>master</code>分支和<code>feature1</code>分支变成了这样  </p>
+<p><img src="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy5.png" alt="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy5.png"></p>
+<p><strong>多PC协同开发</strong></p>
+<p>当你从远程仓库克隆时，实际上Git自动把本地的 <code>master</code>分支和远程的<code>master</code>分支对应起来了，并且，远程仓库的默认名称是<code>origin</code></p>
+<p>查看远程库的信息：<br>查看简单信息：<code>git remote</code><br>查看详细信息：<code>git remote -v</code><br>查看远程仓库分支：<code>git branch -r</code><br>查看本地分支与远程分支的对应关系：<code>git branch -vv</code></p>
+<p>推送分支<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;branch&gt; </span><br><span class="line"></span><br><span class="line">git push -u origin &lt;branch&gt; # 第一次推送加-u可以把当前分支与远程分支关联起来</span><br></pre></td></tr></table></figure></p>
+<p>克隆分支并关联<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:youName/program.git # 默认克隆master分支到当前目录（包含分支文件目录）</span><br><span class="line"></span><br><span class="line">git clone -b &lt;branch&gt; git@github.com:youName/program.git ./</span><br><span class="line"># 克隆指定分支到指定文件目录下（不包含分支文件目录）</span><br></pre></td></tr></table></figure></p>
+<p>创建远程<code>origin</code>的<code>dev</code> 分支到本地</p>
+<table>
+<thead>
+<tr>
+<th>git checkout -b <branch> origin/<branch></branch></branch></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>关联本地分支与远程仓库分支</p>
+<table>
+<thead>
+<tr>
+<th>git branch –set-upstream <branch> origin/<branch></branch></branch></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>同步更新Github Fork的项目</strong></p>
+<p>1、<code>fork</code>项目并<code>clone</code>到本地</p>
+<p>2、进入项目根目录</p>
+<p>3、添加<code>remote</code>指向<strong>上游仓库</strong></p>
+<table>
+<thead>
+<tr>
+<th>git remote add upstream <a href="https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git" target="_blank" rel="noopener">https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>4、把上游项目<code>fetch</code>下来</p>
+<table>
+<thead>
+<tr>
+<th>git fetch upstream</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>5、<code>merge</code>到<code>master</code><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">| git checkout master            </span><br><span class="line">| git <span class="keyword">merge</span> upstream/<span class="keyword">master</span></span><br></pre></td></tr></table></figure></p>
+<p>6、<code>push</code>到自己的远程仓库，搞定～</p>
+<p><strong>最后</strong></p>
+<p>Git真的异常强大，但命令繁多，需多加练习</p>
+<p><em>参考：</em><a href="http://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰老师的教程</a></p>
+<h2 id="附命令图"><a href="#附命令图" class="headerlink" title="附命令图"></a><strong>附命令图</strong></h2><p><img src="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy0.png" alt="http://mdpost.jmzhang.top/mdpost/20181009/gitstudy0.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+<div>
+  
+</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1119,7 +1675,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1130,7 +1686,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1141,7 +1697,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1262,7 +1818,7 @@
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">7.7k</span> 字
+      博客全站共： <span class="post-count">11k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
@@ -1745,6 +2301,7 @@
   
 
 
+
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
 
   <script>
@@ -1754,3 +2311,5 @@
 </html>
 <!-- ҳ���� -->
 <script type="text/javascript" src="/js/src/jsaon001.js"></script>
+
+
